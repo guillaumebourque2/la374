@@ -83,11 +83,12 @@ img {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.nav li {
-    display: inline-block;
-}
 .nav ul {
     float: right;
+    padding: 0;
+}
+.nav li {
+    display: inline-block;
 }
 .nav button {
     padding: 8px 16px;

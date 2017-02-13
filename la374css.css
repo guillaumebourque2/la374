@@ -71,12 +71,12 @@ img {
 }
 
 /*Font*/
-.nav button, div.project-title, div.project-description {
+.nav button, body.project div.title, body.project div.description {
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.18em;
     color: rgb(51,51,51);
 }
-.nav button, div.project-title {
+.nav button, body.project div.title {
     text-transform: uppercase;
 }
 
@@ -104,7 +104,15 @@ button {
 
 
 /*Project page-specific css*/
-div.project-pictures img {
+body {
+    max-width: 1000px;
+    margin: 8px auto;
+}
+body.project div.content {
+    max-width: 608px;
+    margin: auto;
+}
+body.project div.pictures img {
     padding: 4px;
 }
 

@@ -71,7 +71,7 @@ img {
 }
 
 /*Font*/
-.nav button {
+.nav button, div.project-title {
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.18em;

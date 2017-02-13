@@ -71,7 +71,7 @@ img {
 }
 
 /*Font*/
-.nav button, div.project-title {
+.nav button, div.project-title, div.project-description {
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.18em;
@@ -102,5 +102,7 @@ button {
 
 
 /*Project page-specific css*/
-
+div.project-pictures img {
+    padding: 4px;
+}
 

@@ -73,9 +73,11 @@ img {
 /*Font*/
 .nav button, div.project-title, div.project-description {
     font-family: 'Source Sans Pro', sans-serif;
-    text-transform: uppercase;
     letter-spacing: 0.18em;
     color: rgb(51,51,51);
+}
+.nav button, div.project-title {
+    text-transform: uppercase;
 }
 
 /*Navigation bar*/

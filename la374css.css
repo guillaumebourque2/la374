@@ -54,6 +54,8 @@ body {
     /*All columns with float left, but rows won't get mingled*/
     [class*="col-"] {
         float: left;
+    }
+    .row {
         padding: 0.01em 16px;
     }
     .row::after {
@@ -109,10 +111,23 @@ body {
     margin: 8px auto;
 }
 body.project div.content {
-    max-width: 608px;
     margin: auto;
+}
+div.content#coffee-table {
+    max-width: 608px;
 }
 body.project div.pictures img {
     padding: 4px;
+}
+body.project div.pictures {
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+@media only screen and (min-width: 601px) {
+    /* For tablets and desktop layouts: */
+    #maple-collection-1 {width: 24%;}
+    #maple-collection-3 {width: 51%;}
+    #maple-collection-2 {width: 25%;}
 }
 

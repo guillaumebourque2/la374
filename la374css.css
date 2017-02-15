@@ -143,5 +143,30 @@ body.project div.pictures {
     #delta-table-2 {width: 58.5%;}
     #delta-table-7 {width: 31%;}
     #delta-table-4 {width: 21.2%;}
+
+    #miscellaneous-col1 {width: 40.25%;}
+    #bottle-chandelier-1 {width: 85%;
+                        position: absolute;
+                        right: 0;}
+    #bike-rack {margin-top: 91%;}
+
+    #miscellaneous-col2 {width: 57.7%;}
+    #block-lamp {width: 64.2%;
+                position: absolute;
+                bottom: 0;}
+    #wine-crate-shelves {width: 35.8%;
+                        margin-left: 64.2%;}
+
+    #miscellaneous-col3 {width: 59.75%;}
+    #bottle-chandelier-2 {width: 27.1%;}
+    #book-rack-2 {width: 27.1%;
+                position: absolute;
+                bottom: 0;}
+    #butcher-blocks {width: 34.9%;}
+    #book-rack-3 {width: 34.9%;
+                position: absolute;
+                bottom: 0;
+                margin-left: 27.1%;}
+    #book-rack-1 {width: 38%;}
 }
 

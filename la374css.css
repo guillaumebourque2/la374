@@ -79,7 +79,7 @@ body {
 }
 
 /*Font*/
-.nav button, body.project div.title, body.project div.description {
+.nav button, body.project div.title, body.project div.description, h3 {
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.18em;
     color: rgb(51,51,51);
@@ -102,12 +102,21 @@ body {
 }
 .nav button {
     padding: 8px 16px;
+}
+button {
     border: none;
     outline: none;
     background-color: white;
-}
-button {
     cursor: pointer;
+}
+
+/*Portfolio page-specific css*/
+div.pictures button {
+    padding: 0;
+}
+@media only screen and (min-width: 601px) {
+    /* For tablet and desktop portfolio tiles: */
+    .col-portfolio {width: 20%;}
 }
 
 /*Project page-specific css*/

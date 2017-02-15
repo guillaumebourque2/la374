@@ -14,13 +14,13 @@ body {
         box-sizing: border-box;
     }
 
-    /* For smartphones RWD: */
+    /* For smartphone RWD: */
     [class*="col-"] {
         width: 100%;
     }
 
     @media only screen and (min-width: 601px) {
-        /* For tablets RWD: */
+        /* For tablet RWD: */
         .col-m-1 {width: 8.33%;}
         .col-m-2 {width: 16.66%;}
         .col-m-3 {width: 25%;}
@@ -72,6 +72,12 @@ img {
     height: auto;
 }
 
+/*Page width*/
+body {
+    max-width: 1000px;
+    margin: 8px auto;
+}
+
 /*Font*/
 .nav button, body.project div.title, body.project div.description {
     font-family: 'Source Sans Pro', sans-serif;
@@ -104,12 +110,7 @@ button {
     cursor: pointer;
 }
 
-
 /*Project page-specific css*/
-body {
-    max-width: 1000px;
-    margin: 8px auto;
-}
 body.project div.content {
     margin: auto;
 }
@@ -118,16 +119,29 @@ div.content#coffee-table {
 }
 body.project div.pictures img {
     padding: 4px;
+    display: block;
 }
 body.project div.pictures {
     margin-left: -4px;
     margin-right: -4px;
 }
-
 @media only screen and (min-width: 601px) {
-    /* For tablets and desktop layouts: */
-    #maple-collection-1 {width: 24%;}
+    /* For tablet and desktop project picture layouts: */
+    .parent {position: relative;}
+
+    #maple-collection-1 {width: 24.1%;}
     #maple-collection-3 {width: 51%;}
-    #maple-collection-2 {width: 25%;}
+    #maple-collection-2 {width: 24.9%;}
+
+    #delta-table-3-8 {width: 53.5%;
+                    position: absolute;
+                    bottom: 0;
+                    padding-right: 16px;}
+    #delta-table-1 {width: 46.5%;
+                    margin-left: 53.5%}
+    #delta-table-5 {width: 41.5%;}
+    #delta-table-2 {width: 58.5%;}
+    #delta-table-7 {width: 31%;}
+    #delta-table-4 {width: 21.2%;}
 }
 

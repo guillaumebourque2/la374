@@ -13,4 +13,10 @@ if (/[?]lang=fr/.test(window.location.href) ) {
 	//Switch text to the other language
 		$("span[lang|='en']").toggle(0);
 		$("span[lang|='fr']").toggle(0);
+	//Switch links to French versions
+		$("a").each(function() {
+   			var $this = $(this);       
+   			var _href = $this.attr("href"); 
+   			$this.attr("href", _href + '?lang=fr');
+		});
 }

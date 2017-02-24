@@ -14,9 +14,29 @@ if (/[?]lang=fr/.test(window.location.href) ) {
 		$("span[lang|='en']").toggle(0);
 		$("span[lang|='fr']").toggle(0);
 	//Switch links to French versions
-		$("a").each(function() {
+		$("a:not(div.pictures a)").each(function() {
    			var $this = $(this);       
    			var _href = $this.attr("href"); 
    			$this.attr("href", _href + '?lang=fr');
 		});
+}
+
+//If a project-page, fill-in urls to include which picture is being clicked
+//If url contains portfolio, but not slideshows
+if (/portfolio/.test(window.location.href) ) {
+		$("div.pictures a").each(function() {
+   			var $this = $(this);       
+   			var _href = $this.attr("href"); 
+   			var _img = $this.children().first().attr("src");
+   			var _img2 = _img.replace('../images/layout_600/','');
+   			$this.attr("href", _href + '?img=' + _img2);
+		});
+}
+
+//If url has an img suffix
+if (/[?]img=/.test(window.location.href) ) {
+    var ssimg = /[?]img=(.*?)$/.exec(window.location.href)[1];
+    ssimg = ssimg.replace(/%20/g, " ")
+	console.log(ssimg);
+	$("[src$='" + ssimg + "']").css({"display":"block"});
 }

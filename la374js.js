@@ -8,8 +8,12 @@ $("#language").click(function() {
 		}
 });
 
+//Defining a variable with page url, as it is reused many times in 
+//following code (but without modifying it as in first if)
+var wlh = window.location.href;
+
 //If url has the suffix for French
-if (/[?]lang=fr/.test(window.location.href) ) {
+if (/[?]lang=fr/.test(wlh) ) {
 	//Switch text to the other language
 		$("span[lang|='en']").toggle(0);
 		$("span[lang|='fr']").toggle(0);
@@ -23,20 +27,22 @@ if (/[?]lang=fr/.test(window.location.href) ) {
 
 //If a project-page, fill-in urls to include which picture is being clicked
 //If url contains portfolio, but not slideshows
-if (/portfolio/.test(window.location.href) ) {
-		$("div.pictures a").each(function() {
+if (/[/]portfolio[/]/.test(wlh)) {
+	if (/[/]slideshows[/]/.test(wlh)) {
+	} else {
+		$("a.slideshow").each(function() {
+   			var _pjt = /[/]portfolio[/](.*?)([?]lang=fr)*$/.exec(wlh)[1];
    			var $this = $(this);       
-   			var _href = $this.attr("href"); 
    			var _img = $this.children().first().attr("src");
    			var _img2 = _img.replace('../images/layout_600/','');
-   			$this.attr("href", _href + '?img=' + _img2);
+   			$this.attr("href", 'slideshows/' + _pjt + '?img=' + _img2);
 		});
+	}
 }
 
 //If url has an img suffix
-if (/[?]img=/.test(window.location.href) ) {
-    var ssimg = /[?]img=(.*?)$/.exec(window.location.href)[1];
-    ssimg = ssimg.replace(/%20/g, " ")
-	console.log(ssimg);
+if (/[?]img=/.test(wlh) ) {
+    var ssimg = /[?]img=(.*?)$/.exec(wlh)[1];
+    ssimg = ssimg.replace(/%20/g, " ");
 	$("[src$='" + ssimg + "']").css({"display":"block"});
 }

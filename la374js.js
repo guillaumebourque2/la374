@@ -25,24 +25,37 @@ if (/[?]lang=fr/.test(wlh) ) {
 		});
 }
 
-//If a project-page, fill-in urls to include which picture is being clicked
-//If url contains portfolio, but not slideshows
-if (/[/]portfolio[/]/.test(wlh)) {
-	if (/[/]slideshows[/]/.test(wlh)) {
-	} else {
-		$("a.slideshow").each(function() {
-   			var _pjt = /[/]portfolio[/](.*?)([?]lang=fr)*$/.exec(wlh)[1];
-   			var $this = $(this);       
-   			var _img = $this.children().first().attr("src");
-   			var _img2 = _img.replace('../images/layout_600/','');
-   			$this.attr("href", 'slideshows/' + _pjt + '?img=' + _img2);
-		});
-	}
-}
+//Fill-in urls towards slideshows, including which picture is being clicked
+$("a.slideshow").each(function() {
+	var _pjt = /[/]portfolio[/](.*?)([?]lang=fr)*$/.exec(wlh)[1];
+	var $this = $(this);       
+	var _img = $this.children().first().attr("src");
+	var _img2 = _img.replace('../images/layout_600/','');
+	$this.attr("href", 'slideshows/' + _pjt + '?img=' + _img2);
+});
 
 //If url has an img suffix
 if (/[?]img=/.test(wlh) ) {
+	//Display current image
     var ssimg = /[?]img=(.*?)$/.exec(wlh)[1];
     ssimg = ssimg.replace(/%20/g, " ");
 	$("[src$='" + ssimg + "']").css({"display":"block"});
+
+	//Next and previous slideshow-buttons
+	var _href = /^.*?[?]img=/.exec(wlh)[0];
+
+		var _next = $("[src $= '" + ssimg + "']").next().attr("src");
+		if (typeof _next === "undefined") {
+			_next = $("[src $= '" + ssimg + "']").siblings("img").first().attr("src");
+		}
+		_next = _next.replace('../../images/slideshow/','');
+		$("a.next").attr("href", _href + _next);
+
+		var _prev = $("[src $= '" + ssimg + "']").prev().attr("src");
+		if (typeof _prev === "undefined") {
+			_prev = $("[src $= '" + ssimg + "']").siblings("img").last().attr("src");
+		}
+		_prev = _prev.replace('../../images/slideshow/','');
+		$("a.previous").attr("href", _href + _prev);
 }
+

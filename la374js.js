@@ -48,14 +48,26 @@ if (/[?]img=/.test(wlh) ) {
 		if (typeof _next === "undefined") {
 			_next = $("[src $= '" + ssimg + "']").siblings("img").first().attr("src");
 		}
-		_next = _next.replace('../../images/slideshow/','');
+		_next = _next.replace('../../images/slideshow_900/','');
 		$("a.next").attr("href", _href + _next);
 
 		var _prev = $("[src $= '" + ssimg + "']").prev().attr("src");
 		if (typeof _prev === "undefined") {
 			_prev = $("[src $= '" + ssimg + "']").siblings("img").last().attr("src");
 		}
-		_prev = _prev.replace('../../images/slideshow/','');
+		_prev = _prev.replace('../../images/slideshow_900/','');
 		$("a.previous").attr("href", _href + _prev);
 }
 
+
+//To switch between smartphone slideshow pictures and tablet/desktop slideshow pictures
+function higherRes() {
+	if (window.matchMedia("(min-width: 601px)").matches) {
+		$("div.slideshow img").each(function() {
+			var $this = $(this);       
+			var _src = $this.attr("src");
+			$this.attr("src", _src.replace('slideshow_900/','slideshow_2000/'));
+		});
+	}
+}
+higherRes();

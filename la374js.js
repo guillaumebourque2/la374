@@ -34,7 +34,7 @@ $("a.slideshow").each(function() {
 	$this.attr("href", 'slideshows/' + _pjt + '?img=' + _img2);
 });
 
-//If url has an img suffix
+//If url has an img suffix (slideshows)
 if (/[?]img=/.test(wlh) ) {
 	//Display current image
     var ssimg = /[?]img=(.*?)$/.exec(wlh)[1];
@@ -57,6 +57,9 @@ if (/[?]img=/.test(wlh) ) {
 		}
 		_prev = _prev.replace('../../images/slideshow_900/','');
 		$("a.previous").attr("href", _href + _prev);
+
+	//Link to full resolution images
+	$("a.full-res").attr("href", "../../images/full_size/" + ssimg);
 }
 
 

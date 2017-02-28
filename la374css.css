@@ -5,7 +5,7 @@ body {
 }
 
 /*French text*/
-[lang|=fr] {
+[lang|=fr]:not(html) {
     display: none;
 }
 

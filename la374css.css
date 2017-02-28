@@ -193,6 +193,17 @@ body.project div.pictures {
     #picture-frames-12 {width: 51.5%;}
     #picture-frames-4 {width: 48.5%;}
 
+    #turner-1 {width: 58.5%;}
+    #turner-5 {width: 41.5%;
+                position: absolute;
+                bottom: 0;
+                padding-right: 16px;
+                left: 58.5%;}
+    #turner-before {width: 19%;
+                    margin-left: 9.225%;}
+    #turner-after {width: 19%;}
+    #turner-3 {width: 27.2%;}
+    #turner-4 {width: 16.35%;}
 }
 
 

@@ -76,16 +76,34 @@ img {
 body {
     max-width: 1000px;
     margin: 8px auto;
+    font-size: 100%;
 }
 
 /*Font*/
 .nav button, body.project div.title, body.project div.description, h3 {
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.18em;
-    color: rgb(51,51,51);
+}
+.nav button, body.project div.title, h3 {
+    color: rgb(92,86,55);
 }
 .nav button, body.project div.title {
     text-transform: uppercase;
+}
+body.project div.title h1 {
+    font-weight: normal;
+    font-size: 1.7em;
+    letter-spacing: 0.22em;
+}
+.col-portfolio h3 {
+    font-weight: 500;
+    padding-left: 0.5em;
+}
+.col-portfolio button {
+    text-align: left;
+}
+body.project div.description {
+    color: rgb(51,51,51);
 }
 
 /*Navigation bar*/
@@ -93,15 +111,29 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+#logo {
+    padding-bottom: 0.2em;
+}
+#sub-banner {
+    border-color: rgb(92,86,55);
+    border-width: 2px;
+    border-style: solid;
+}
 .nav ul {
     float: right;
     padding: 0;
+    margin: 0;
 }
 .nav li {
     display: inline-block;
 }
 .nav button {
-    padding: 8px 16px;
+    padding: 0 16px;
+    font-size: 1.1em;
+    font-weight: bold; 
+}
+.nav li:last-of-type button {
+    padding-right: 0;
 }
 button {
     border: none;
@@ -116,7 +148,7 @@ div.pictures button {
 }
 @media only screen and (min-width: 601px) {
     /* For tablet and desktop portfolio tiles: */
-    .col-portfolio {width: 20%;}
+    .col-portfolio {width: 33%;}
 }
 
 /*Project page-specific css*/

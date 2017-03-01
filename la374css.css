@@ -140,17 +140,18 @@ button {
     outline: none;
     background-color: white;
     cursor: pointer;
+    max-width: 100%;
 }
 
 /*Portfolio page-specific css*/
 div.pictures button {
     padding: 0;
 }
-@media only screen and (min-width: 601px) {
-    /* For tablet and desktop portfolio tiles: */
+/*@media only screen and (min-width: 601px) {
+*/    /* For tablet and desktop portfolio tiles: */
     .col-portfolio {width: 33%;}
-}
-
+/*}
+*/
 /*Project page-specific css*/
 body.project div.content {
     margin: auto;
@@ -166,10 +167,11 @@ body.project div.pictures {
     margin-left: -4px;
     margin-right: -4px;
 }
+.parent {position: relative;}
+
 @media only screen and (min-width: 601px) {
     /* For tablet and desktop project picture layouts: */
-    .parent {position: relative;}
-
+    
     #maple-collection-1 {width: 24.1%;}
     #maple-collection-3 {width: 51%;}
     #maple-collection-2 {width: 24.9%;}

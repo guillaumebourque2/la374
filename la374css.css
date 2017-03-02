@@ -77,6 +77,7 @@ body {
     max-width: 1000px;
     margin: 8px auto;
     font-size: 100%;
+    min-width: 320px;
 }
 
 /*Font*/
@@ -142,6 +143,26 @@ button {
     cursor: pointer;
     max-width: 100%;
 }
+/*Making nav bar shrink on small devices*/
+@media only screen and (max-width: 525px) {
+    .nav {
+        font-size: 80%;
+    }
+}
+@media only screen and (max-width: 450px) {    
+    .nav button {
+        padding: 0 8px;
+    }
+    .nav li:first-of-type button {
+        padding-left: 0;
+    }
+}
+@media only screen and (max-width: 390px) {
+    .nav {
+        font-size: 65%;
+    }
+}
+
 
 /*Portfolio page-specific css*/
 div.pictures button {

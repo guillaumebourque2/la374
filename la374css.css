@@ -177,11 +177,10 @@ button {
 div.pictures button {
     padding: 0;
 }
-/*@media only screen and (min-width: 601px) {
-*/    /* For tablet and desktop portfolio tiles: */
-    .col-portfolio {width: 33%;}
-/*}
-*/
+.col-portfolio {width: 33%;}
+
+
+
 /*Project page-specific css*/
 body.project div.content {
     margin: auto;
@@ -190,149 +189,155 @@ div.content#rajasthan-table {
     max-width: 608px;
 }
 body.project div.pictures img {
-    padding: 4px;
+    padding: 2px;
     display: block;
 }
 body.project div.pictures {
-    margin-left: -4px;
-    margin-right: -4px;
+    margin-left: -2px;
+    margin-right: -2px;
+}
+@media only screen and (min-width: 601px) {
+ /* For tablet and desktop project picture layouts: */
+   body.project div.pictures img {
+        padding: 4px;
+    }
+    body.project div.pictures {
+        margin-left: -4px;
+        margin-right: -4px;
+    }
 }
 .parent {position: relative;}
+.no-padding {padding: 0;}
 
-@media only screen and (min-width: 601px) {
-    /* For tablet and desktop project picture layouts: */
-    
-    #maple-collection-1 {width: 24.1%;}
-    #maple-collection-3 {width: 51%;}
-    #maple-collection-2 {width: 24.9%;}
 
-    #delta-table-3-8 {width: 53.5%;
-                    position: absolute;
-                    bottom: 0;
-                    padding-right: 16px;}
-    #delta-table-1 {width: 46.5%;
-                    margin-left: 53.5%;}
-    #delta-table-5 {width: 41.5%;}
-    #delta-table-2 {width: 58.5%;}
-    #delta-table-7 {width: 31%;}
-    #delta-table-4 {width: 21.2%;}
+/*Individual mosaic formatting*/    
+#maple-collection-1 {width: 24.1%;}
+#maple-collection-3 {width: 51%;}
+#maple-collection-2 {width: 24.9%;}
 
-    #miscellaneous-col1 {width: 40.25%;}
-    #bottle-chandelier-1 {width: 85%;
-                        position: absolute;
-                        right: 0;}
-    #bike-rack {margin-top: 91%;}
-
-    #miscellaneous-col2 {width: 57.7%;}
-    #block-lamp {width: 64.2%;
+#delta-table-3-8 {width: 53.5%;
                 position: absolute;
                 bottom: 0;}
-    #wine-crate-shelves {width: 35.8%;
-                        margin-left: 64.2%;}
+#delta-table-1 {width: 46.5%;
+                margin-left: 53.5%;}
+#delta-table-5 {width: 41.5%;}
+#delta-table-2 {width: 58.5%;}
+#delta-table-7 {width: 31%;}
+#delta-table-4 {width: 21.2%;}
 
-    #miscellaneous-col3 {width: 59.75%;}
-    #bottle-chandelier-2 {width: 27.1%;}
-    #book-rack-2 {width: 27.1%;
-                position: absolute;
-                bottom: 0;}
-    #butcher-blocks {width: 34.9%;}
-    #book-rack-3 {width: 34.9%;
-                position: absolute;
-                bottom: 0;
-                margin-left: 27.1%;}
-    #book-rack-1 {width: 38%;}
-
-    #jewelry-box-2 {width: 41.55%;}
-    #jewelry-box-1-3 {width: 58.45%;}
-
-    #nad-face-plates-3 {width: 62%;}
-    #nad-face-plates-2 {width: 38%;}
-    #nad-face-plates-1 {width: 32.6%;}
-
-    #picture-frames-col1 {width: 33.04%;}
-    #picture-frames-col2 {width: 66.96%;}
-    #picture-frames-6a {width: 100%;}
-    #picture-frames-3 {width: 71.55%;}
-    #picture-frames-11 {width: 28.45%;}
-    #picture-frames-12 {width: 51.5%;}
-    #picture-frames-4 {width: 48.5%;}
-
-    #turner-1 {width: 58.5%;}
-    #turner-5 {width: 41.5%;
-                position: absolute;
-                bottom: 0;
-                padding-right: 16px;
-                left: 58.5%;}
-    #turner-before {width: 19%;
-                    margin-left: 9.225%;}
-    #turner-after {width: 19%;}
-    #turner-3 {width: 27.2%;}
-    #turner-4 {width: 16.35%;}
-
-    #whiskey-shelf-col1 {width: 24.8%;}
-    #whiskey-shelf-col2 {width: 50.55%;}
-    #whiskey-shelf-col3 {width: 24.65%;}
-
-    #white-oak-collection-9 {width: 45.4%;}
-    #white-oak-collection-4 {width: 54.6%;}
-    #white-oak-collection-8 {width: 20.7%;}
-    #white-oak-collection-11 {width: 22.05%;}
-    #white-oak-collection-2 {width: 36.55%;}
-    #white-oak-collection-6 {width: 20.7%;}
-
-    #oyster-bar-7 {width: 31.125%;}
-    #oyster-bar-1 {width: 68.875%;}
-    #oyster-bar-3 {width: 88%;
-                    margin-left: 6%;}
-    #oyster-bar-2 {width: 33.2%;}
-    #oyster-bar-gif {width: 33%;}
-    #oyster-bar-8 {width: 33.8%;}
-
-    #william-dresser-7 {width: 37.35%;}
-    #william-dresser-8 {width: 37.35%;}
-    #william-dresser-3 {width: 25.3%;}
-    #william-dresser-2 {width: 100%;}
-    #william-dresser-6 {width: 41.75%;}
-    #william-dresser-gif {width: 16.75%;}
-    #william-dresser-5 {width: 41.5%;}
-
-    #workbench-2 {width: 30%;
-                position: absolute;
-                bottom: 0;
-                padding-right: 10px;}
-    #workbench-6 {width: 50%;
-                margin-left: 30%;}
-    #workbench-1 {width: 21.15%;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                padding-right: 16px;}
-    #workbench-4 {width: 62%;
-                margin-left: 4.5%;}
-    #workbench-5 {width: 29%;}
-    #workbench-3 {width: 21.8%;}
-
-    #aircraft-bar-col1 {width: 26%;}
-    #aircraft-bar-col2 {width: 74%;}
-    #aircraft-bar-2 {width: 100%;
-                    margin-top: 129.5%;}
-    #aircraft-bar-3 {width: 78%;}
-    #aircraft-bar-8 {width: 59.4%;}
-    #aircraft-bar-5 {width: 40.6%;}
-    #aircraft-bar-1 {width: 21%;}
-    #aircraft-bar-6 {width: 57%;}
-
-    #market-case-3 {width: 21.5%;}
-    #market-case-1 {width: 38.2%;
+#miscellaneous-col1 {width: 40.25%;}
+#bottle-chandelier-1 {width: 85%;
                     position: absolute;
-                    bottom: 0;
-                    margin-left: 21.3%;}
-    #market-case-7 {width: 38.1%;
-                    position: absolute;
-                    bottom: 0;
-                    right: 0;
-                    padding-right: 16px;}
-}
+                    right: 0;}
+#bike-rack {margin-top: 91%;}
+
+#miscellaneous-col2 {width: 57.7%;}
+#block-lamp {width: 64.2%;
+            position: absolute;
+            bottom: 0;}
+#wine-crate-shelves {width: 35.8%;
+                    margin-left: 64.2%;}
+
+#miscellaneous-col3 {width: 59.75%;}
+#bottle-chandelier-2 {width: 27.1%;}
+#book-rack-2 {width: 27.1%;
+            position: absolute;
+            bottom: 0;}
+#butcher-blocks {width: 34.9%;}
+#book-rack-3 {width: 34.9%;
+            position: absolute;
+            bottom: 0;
+            margin-left: 27.1%;}
+#book-rack-1 {width: 38%;}
+
+#jewelry-box-2 {width: 41.55%;}
+#jewelry-box-1-3 {width: 58.45%;}
+
+#nad-face-plates-3 {width: 62%;}
+#nad-face-plates-2 {width: 38%;}
+#nad-face-plates-1 {width: 32.6%;}
+
+#picture-frames-col1 {width: 33.04%;}
+#picture-frames-col2 {width: 66.96%;}
+#picture-frames-6a {width: 100%;}
+#picture-frames-3 {width: 71.55%;}
+#picture-frames-11 {width: 28.45%;}
+#picture-frames-12 {width: 51.5%;}
+#picture-frames-4 {width: 48.5%;}
+
+#turner-1 {width: 58.5%;}
+#turner-5 {width: 41.5%;
+            position: absolute;
+            bottom: 0;
+            left: 58.5%;}
+#turner-before {width: 19%;
+                margin-left: 9.225%;}
+#turner-after {width: 19%;}
+#turner-3 {width: 27.2%;}
+#turner-4 {width: 16.35%;}
+
+#whiskey-shelf-col1 {width: 24.8%;}
+#whiskey-shelf-col2 {width: 50.55%;}
+#whiskey-shelf-col3 {width: 24.65%;}
+
+#white-oak-collection-9 {width: 45.4%;}
+#white-oak-collection-4 {width: 54.6%;}
+#white-oak-collection-8 {width: 20.7%;}
+#white-oak-collection-11 {width: 22.05%;}
+#white-oak-collection-2 {width: 36.55%;}
+#white-oak-collection-6 {width: 20.7%;}
+
+#oyster-bar-7 {width: 31.125%;}
+#oyster-bar-1 {width: 68.875%;}
+#oyster-bar-3 {width: 88%;
+                margin-left: 6%;}
+#oyster-bar-2 {width: 33.2%;}
+#oyster-bar-gif {width: 33%;}
+#oyster-bar-8 {width: 33.8%;}
+
+#william-dresser-7 {width: 37.35%;}
+#william-dresser-8 {width: 37.35%;}
+#william-dresser-3 {width: 25.3%;}
+#william-dresser-2 {width: 100%;}
+#william-dresser-6 {width: 41.75%;}
+#william-dresser-gif {width: 16.75%;}
+#william-dresser-5 {width: 41.5%;}
+
+#workbench-2 {width: 30%;
+            position: absolute;
+            bottom: 0;
+            left: 0;}
+#workbench-6 {width: 50%;
+            margin-left: 30%;}
+#workbench-1 {width: 20%;
+            position: absolute;
+            bottom: 0;
+            right: 0;}
+#workbench-4 {width: 62%;
+            margin-left: 4.5%;}
+#workbench-5 {width: 29%;}
+#workbench-3 {width: 21.8%;}
+
+#aircraft-bar-col1 {width: 26%;}
+#aircraft-bar-col2 {width: 74%;}
+#aircraft-bar-2 {width: 100%;
+                margin-top: 129.5%;}
+#aircraft-bar-3 {width: 78%;}
+#aircraft-bar-8 {width: 59.4%;}
+#aircraft-bar-5 {width: 40.6%;}
+#aircraft-bar-1 {width: 21%;}
+#aircraft-bar-6 {width: 57%;}
+
+#market-case-3 {width: 21.5%;}
+#market-case-1 {width: 40.3%;
+                position: absolute;
+                bottom: 0;
+                margin-left: 21.5%;}
+#market-case-7 {width: 38.2%;
+                position: absolute;
+                bottom: 0;
+                right: 0;}
+
 
 
 /*Slideshow page-specific css*/

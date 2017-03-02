@@ -291,6 +291,17 @@ body.project div.pictures {
     #aircraft-bar-5 {width: 40.6%;}
     #aircraft-bar-1 {width: 21%;}
     #aircraft-bar-6 {width: 57%;}
+
+    #market-case-3 {width: 21.5%;}
+    #market-case-1 {width: 38.2%;
+                    position: absolute;
+                    bottom: 0;
+                    margin-left: 21.3%;}
+    #market-case-7 {width: 38.1%;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    padding-right: 16px;}
 }
 
 

@@ -129,7 +129,6 @@ body.project div.description {
     display: inline-block;
 }
 .nav button {
-    padding: 0 16px;
     font-size: 1.1em;
     font-weight: bold; 
 }
@@ -144,24 +143,34 @@ button {
     max-width: 100%;
 }
 /*Making nav bar shrink on small devices*/
-@media only screen and (max-width: 525px) {
+/*Mobile first*/
+.nav button {
+    padding: 0 8px;
+}
+.nav li:first-of-type button {
+    padding-left: 0;
+}
+.nav {
+    font-size: 65%;
+}
+@media only screen and (min-width: 390px) {
     .nav {
         font-size: 80%;
     }
-}
-@media only screen and (max-width: 450px) {    
+@media only screen and (min-width: 450px) {    
     .nav button {
-        padding: 0 8px;
+        padding: 0 16px;
     }
     .nav li:first-of-type button {
-        padding-left: 0;
+        padding-left: 16px;
     }
 }
-@media only screen and (max-width: 390px) {
+}@media only screen and (min-width: 525px) {
     .nav {
-        font-size: 65%;
+        font-size: 100%;
     }
 }
+
 
 
 /*Portfolio page-specific css*/

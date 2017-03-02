@@ -181,7 +181,7 @@ body.project div.pictures {
                     bottom: 0;
                     padding-right: 16px;}
     #delta-table-1 {width: 46.5%;
-                    margin-left: 53.5%}
+                    margin-left: 53.5%;}
     #delta-table-5 {width: 41.5%;}
     #delta-table-2 {width: 58.5%;}
     #delta-table-7 {width: 31%;}
@@ -265,6 +265,22 @@ body.project div.pictures {
     #william-dresser-6 {width: 41.75%;}
     #william-dresser-gif {width: 16.75%;}
     #william-dresser-5 {width: 41.5%;}
+
+    #workbench-2 {width: 30%;
+                position: absolute;
+                bottom: 0;
+                padding-right: 10px;}
+    #workbench-6 {width: 50%;
+                margin-left: 30%;}
+    #workbench-1 {width: 21.15%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding-right: 16px;}
+    #workbench-4 {width: 62%;
+                margin-left: 4.5%;}
+    #workbench-5 {width: 29%;}
+    #workbench-3 {width: 21.8%;}
 
 }
 

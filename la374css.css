@@ -144,6 +144,9 @@ div.pictures button {
 .col-portfolio {width: 33%;}
 
 
+/*Contacts page-specific css*/
+img.social-media {width: 32px;}
+
 
 /*Project page-specific css*/
 body.project div.content {

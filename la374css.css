@@ -236,11 +236,21 @@ body.project div.pictures {
 #nad-face-plates-2 {width: 38%;}
 #nad-face-plates-1 {width: 32.6%;}
 
-#picture-frames-col1 {width: 33.04%;}
-#picture-frames-col2 {width: 66.96%;}
+#picture-frames-col1 {width: 33.15%;
+                    position: absolute;
+                    bottom: 0;}
+#picture-frames-col2 {width: 66.85%;
+                    margin-left: 33.15%;}
+#picture-frames-1 {width: 49.59%;
+                    position: absolute;
+                    top: 0;
+                    margin-left: -49.59%;}
+#picture-frames-8 {width: 100%;
+                    position: absolute;
+                    bottom: 0;}
 #picture-frames-6a {width: 100%;}
-#picture-frames-3 {width: 71.55%;}
-#picture-frames-11 {width: 28.45%;}
+#picture-frames-3 {width: 71.45%;}
+#picture-frames-11 {width: 28.55%;}
 #picture-frames-12 {width: 51.5%;}
 #picture-frames-4 {width: 48.5%;}
 
@@ -255,9 +265,31 @@ body.project div.pictures {
 #turner-3 {width: 27.2%;}
 #turner-4 {width: 16.35%;}
 
-#whiskey-shelf-col1 {width: 24.8%;}
-#whiskey-shelf-col2 {width: 50.55%;}
-#whiskey-shelf-col3 {width: 24.65%;}
+#whiskey-shelf-col1 {width: 24.8%;
+                    position: absolute;
+                    bottom: 0;}
+#whiskey-shelf-col2 {width: 50.55%;
+                    margin-left: 24.8%;}
+#whiskey-shelf-col3 {width: 24.65%;
+                    position: absolute;
+                    bottom: 0;
+                    margin-left: 75.35%;}
+#whiskey-shelf-5 {width: 49.06%;
+                    position: absolute;
+                    top: 0;
+                    margin-left: -49.06%;}}
+#whiskey-shelf-3 {width: 100%;
+                    position: absolute;
+                    bottom: 0;}
+#whiskey-shelf-2 {width: 100%}
+#whiskey-shelf-7 {width: 48.76%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    margin-right: -48.76%;}}
+#whiskey-shelf-6 {width: 100%;
+                    position: absolute;
+                    bottom: 0;}
 
 #white-oak-collection-9 {width: 45.4%;}
 #white-oak-collection-4 {width: 54.6%;}

@@ -54,6 +54,9 @@ body {
 .nav button, body.project div.title {
     text-transform: uppercase;
 }
+#about {
+    text-transform: none;
+}
 body.project div.title h1 {
     font-weight: normal;
     font-size: 1.4em;

@@ -35,13 +35,22 @@ img {
     height: auto;
 }
 
-/*Page width*/
+/*Page width and height*/
 body {
     max-width: 1000px;
     margin: 8px auto;
     font-size: 100%;
     min-width: 320px;
 }
+div.content#rajasthan-table {
+    max-width: 608px;
+}
+body.project div.content {
+    margin: auto;
+    position: relative;
+    padding-bottom: 20vw;
+}
+
 
 /*Font*/
 .nav button, body.project div.title, body.project div.description, h3 {
@@ -162,12 +171,6 @@ img.social-media {width: 32px;}
 
 
 /*Project page-specific css*/
-body.project div.content {
-    margin: auto;
-}
-div.content#rajasthan-table {
-    max-width: 608px;
-}
 body.project div.pictures img {
     padding: 2px;
     display: block;

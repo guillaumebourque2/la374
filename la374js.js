@@ -18,10 +18,15 @@ if (/[?]lang=fr/.test(wlh) ) {
 		$("span[lang|='en']").toggle(0);
 		$("span[lang|='fr']").toggle(0);
 	//Switch links to French versions
-		$("a:not(.slideshow)").each(function() {
+		$("a:not(.slideshow):not(#instagram)").each(function() {
    			var $this = $(this);       
    			var _href = $this.attr("href"); 
    			$this.attr("href", _href + '?lang=fr');
+		});
+		$("a#instagram").each(function() {
+   			var $this = $(this);       
+   			var _href = $this.attr("href"); 
+   			$this.attr("href", _href + '?hl=fr');
 		});
 	//Switch html language (for google translate purposes) to French
 		$("html").attr("lang", "fr");

@@ -49,9 +49,17 @@ if (/[?]img=/.test(wlh) ) {
     ssimg = ssimg.replace(/%20/g, " ");
     $("[src$='" + ssimg + "']").removeClass("inactive").addClass("active");
 
-	//Next and previous slideshow-buttons
-	var current = $("img.active");
 
+	//Link to full resolution images
+	var current = $("img.active");
+	function updateFullResLink() {
+		var currfr = current.attr('src').replace(/^.*?[/]images[/]slideshow_[0-9]*?[/]/,'');
+		$("a.full-res").attr("href", "../../images/full_size/" + currfr);
+	}
+	updateFullResLink();
+
+
+	//Next and previous slideshow-buttons
 	$('a.next').click( function(e) {
 		e.preventDefault(); 
 
@@ -62,6 +70,7 @@ if (/[?]img=/.test(wlh) ) {
 		current.removeClass("active").addClass("inactive");
 		_next.removeClass("inactive").addClass("active");
 		current = $("img.active");
+		updateFullResLink();
 
 		return false; //prevent browser from following link, as only within page action is needed
 	} );
@@ -76,6 +85,7 @@ if (/[?]img=/.test(wlh) ) {
 		current.removeClass("active").addClass("inactive");
 		_prev.removeClass("inactive").addClass("active");
 		current = $("img.active");
+		updateFullResLink();
 
 		return false; //prevent browser from following link, as only within page action is needed
 	} );
@@ -132,10 +142,6 @@ if (/[?]img=/.test(wlh) ) {
 		$("div.slideshow").on("swipeleft", function() {
 			$("a.next").click();
 		});
-
-
-	//Link to full resolution images
-	$("a.full-res").attr("href", "../../images/full_size/" + ssimg);
 
 
 	//To switch between smartphone slideshow pictures and tablet/desktop slideshow pictures

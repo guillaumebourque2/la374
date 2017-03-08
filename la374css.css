@@ -42,8 +42,9 @@ body {
     font-size: 100%;
     min-width: 320px;
 }
-div.content#rajasthan-table {
+#rajasthan-table {
     max-width: 608px;
+    margin: auto;
 }
 body.project div.content {
     margin: auto;
@@ -380,6 +381,9 @@ div.slideshow img {
     bottom: 0;
     left: 0;
     right: 0;
+}
+.active {
+    display: block;
 }
 
 a.previous, a.next {

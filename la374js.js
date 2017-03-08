@@ -41,29 +41,45 @@ $("a.slideshow").each(function() {
 	$this.attr("href", 'slideshows/' + _pjt + '?img=' + _img2);
 });
 
+
 //If url has an img suffix (slideshows)
 if (/[?]img=/.test(wlh) ) {
 	//Display current image
     var ssimg = /[?]img=(.*?)$/.exec(wlh)[1];
     ssimg = ssimg.replace(/%20/g, " ");
-	$("[src$='" + ssimg + "']").css({"display":"block"});
+    $("[src$='" + ssimg + "']").removeClass("inactive").addClass("active");
 
 	//Next and previous slideshow-buttons
-	var _href = /^.*?[?]img=/.exec(wlh)[0];
+	var current = $("img.active");
 
-		var _next = $("[src $= '" + ssimg + "']").next().attr("src");
-		if (typeof _next === "undefined") {
-			_next = $("[src $= '" + ssimg + "']").siblings("img").first().attr("src");
-		}
-		_next = _next.replace(/^.*?[/]images[/]slideshow_900[/]/,'');
-		$("a.next").attr("href", _href + _next);
+	$('a.next').click( function(e) {
+		e.preventDefault(); 
 
-		var _prev = $("[src $= '" + ssimg + "']").prev().attr("src");
-		if (typeof _prev === "undefined") {
-			_prev = $("[src $= '" + ssimg + "']").siblings("img").last().attr("src");
+		var _next = current.next("img");
+		if (typeof _next[0] === "undefined") {
+			_next = current.siblings("img").first();
 		}
-		_prev = _prev.replace(/^.*?[/]images[/]slideshow_900[/]/,'');
-		$("a.previous").attr("href", _href + _prev);
+		current.removeClass("active").addClass("inactive");
+		_next.removeClass("inactive").addClass("active");
+		current = $("img.active");
+
+		return false; //prevent browser from following link, as only within page action is needed
+	} );
+
+	$('a.previous').click( function(e) {
+		e.preventDefault(); 
+
+		var _prev = current.prev("img");
+		if (typeof _prev[0] === "undefined") {
+			_prev = current.siblings("img").last();
+		}
+		current.removeClass("active").addClass("inactive");
+		_prev.removeClass("inactive").addClass("active");
+		current = $("img.active");
+
+		return false; //prevent browser from following link, as only within page action is needed
+	} );
+
 
 	//Swipe-control of slideshow
 	//Simple swipe detection on vanilla js
@@ -76,7 +92,7 @@ if (/[?]img=/.test(wlh) ) {
 	var timestart = 0;
 	var timeend = 0;
 
-	document.getElementById("version").innerHTML = "Version 1.16";
+	document.getElementById("version").innerHTML = "Version 1.20";
 
 	var gesuredZone = document.getElementsByClassName('gesuredZone')[0];
 
@@ -117,19 +133,20 @@ if (/[?]img=/.test(wlh) ) {
 			$("a.next").click();
 		});
 
+
 	//Link to full resolution images
 	$("a.full-res").attr("href", "../../images/full_size/" + ssimg);
-}
 
 
-//To switch between smartphone slideshow pictures and tablet/desktop slideshow pictures
-function higherRes() {
-	if (window.matchMedia("(min-width: 601px)").matches) {
-		$("div.slideshow img").each(function() {
-			var $this = $(this);       
-			var _src = $this.attr("src");
-			$this.attr("src", _src.replace('slideshow_900/','slideshow_2000/'));
-		});
+	//To switch between smartphone slideshow pictures and tablet/desktop slideshow pictures
+	function higherRes() {
+		if (window.matchMedia("(min-width: 601px)").matches) {
+			$("div.slideshow img").each(function() {
+				var $this = $(this);       
+				var _src = $this.attr("src");
+				$this.attr("src", _src.replace('slideshow_900/','slideshow_2000/'));
+			});
+		}
 	}
+	higherRes();
 }
-higherRes();

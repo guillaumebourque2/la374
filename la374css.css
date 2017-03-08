@@ -371,8 +371,6 @@ div.slideshow {
 }
 
 div.slideshow img {
-    display: none;
-    
     max-width: 100%;
     max-height: 100%;
     position: absolute;
@@ -381,6 +379,9 @@ div.slideshow img {
     bottom: 0;
     left: 0;
     right: 0;
+}
+.inactive {
+    display: none;
 }
 .active {
     display: block;
@@ -397,6 +398,7 @@ a.previous, a.next {
     margin: auto;
     top: 0;
     bottom: 0;
+    cursor: pointer;
 }
 a.previous {
     left: 0;

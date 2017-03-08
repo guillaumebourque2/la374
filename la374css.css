@@ -139,7 +139,7 @@ button {
 /*Making nav bar shrink on small devices*/
 /*Mobile first*/
 .nav button {
-    padding: 0 8px;
+    padding: 0 6px;
 }
 .nav li:first-of-type button {
     padding-left: 0;
@@ -155,6 +155,15 @@ button {
     }
     .nav li:first-of-type button {
         padding-left: 16px;
+    }
+}
+/*Prevent Safari, and other webkit-based browsers, on small mobile screens,
+to enlarge the tab titles automatically.*/
+@media only screen and (max-device-width: 480px){
+    .nav {
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     }
 }
 

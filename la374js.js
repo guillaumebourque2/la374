@@ -102,7 +102,7 @@ if (/[?]img=/.test(wlh) ) {
 	var timestart = 0;
 	var timeend = 0;
 
-	document.getElementById("version").innerHTML = "Version 1.20";
+	document.getElementById("version").innerHTML = "Version 1.22";
 
 	var gesuredZone = document.getElementsByClassName('gesuredZone')[0];
 
@@ -124,24 +124,15 @@ if (/[?]img=/.test(wlh) ) {
 			Math.abs(touchendX - touchstartX) >= 30 && 
 			Math.abs(touchendY - touchstartY) < 30 &&
 			(timeend - timestart) / 1000 <= 1) {
-				// $("a.next").click();
-				alert("swipe left");
+				$("a.next").click();
 		}
 		if (touchendX > touchstartX && 
 			Math.abs(touchendX - touchstartX) >= 30 && 
 			Math.abs(touchendY - touchstartY) < 30 &&
 			(timeend - timestart) / 1000 <= 1) {
-				alert("swipe right");
-				// $("a.previous").click();
+				$("a.previous").click();
 		}
 	}
-	//Swipe-control of slideshow
-		$("div.slideshow").on("swiperight", function() {
-			$("a.previous").click();
-		});
-		$("div.slideshow").on("swipeleft", function() {
-			$("a.next").click();
-		});
 
 
 	//To switch between smartphone slideshow pictures and tablet/desktop slideshow pictures

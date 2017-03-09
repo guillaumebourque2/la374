@@ -122,9 +122,8 @@ body.project div.description {
 .nav li {
     display: inline-block;
 }
-.nav button {
-    font-size: 0.7em;
-    font-weight: bold; 
+.nav li:first-of-type button {
+    padding-left: 0;
 }
 .nav li:last-of-type button {
     padding-right: 0;
@@ -136,36 +135,31 @@ button {
     cursor: pointer;
     max-width: 100%;
 }
+.nav button {
+    font-weight: bold; 
+}
 /*Making nav bar shrink on small devices*/
 /*Mobile first*/
 .nav button {
     padding: 0 6px;
+    font-size: 0.65em;
 }
-.nav li:first-of-type button {
-    padding-left: 0;
-}
-@media only screen and (min-width: 390px) {
-    .nav {
-        font-size: 125%;
+@media only screen and (min-width: 350px) {
+    .nav button {
+        font-size: 0.7em;
     }
 }
-@media only screen and (min-width: 450px) {    
+@media only screen and (min-width: 460px) {
+    .nav button {
+        font-size: 0.875em;
+    }
+}
+@media only screen and (min-width: 700px) {    
     .nav button {
         padding: 0 16px;
     }
-    .nav li:first-of-type button {
-        padding-left: 16px;
-    }
 }
-/*Prevent Safari, and other webkit-based browsers, on small mobile screens,
-to enlarge the tab titles automatically.*/
-@media only screen and (max-device-width: 480px){
-    .nav {
-        -webkit-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-    }
-}
+
 
 
 

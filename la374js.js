@@ -90,6 +90,14 @@ if (/[?]img=/.test(wlh) ) {
 		return false; //prevent browser from following link, as only within page action is needed
 	} );
 
+	$('a.close').click( function(e) {
+		e.preventDefault(); 
+
+		window.history.back();
+
+		return false; //prevent browser from following link, as only within page action is needed
+	} );
+
 
 	//Swipe-control of slideshow
 	//Simple swipe detection on vanilla js

@@ -110,8 +110,6 @@ if (/[?]img=/.test(wlh) ) {
 	var timestart = 0;
 	var timeend = 0;
 
-	document.getElementById("version").innerHTML = "Version 1.22";
-
 	var gesuredZone = document.getElementsByClassName('gesuredZone')[0];
 
 	gesuredZone.addEventListener('touchstart', function(event) {

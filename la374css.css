@@ -390,18 +390,19 @@ div.slideshow img {
     display: block;
 }
 
-a.previous, a.next {
+a.previous, a.next, a.close {
     font-weight: bolder;
     font-size: 500%;
     color: rgba(255,255,255,0.4);
-
-    height: 100%;
-    width: 15%;
     position: absolute;
     margin: auto;
+    cursor: pointer;
+    width: 21%;
+}
+a.previous, a.next {
+    height: 100%;
     top: 0;
     bottom: 0;
-    cursor: pointer;
 }
 a.previous {
     left: 0;
@@ -409,14 +410,25 @@ a.previous {
 a.next {
     right: 0;
 }
-a.previous span, a.next span {
+a.close {
+    height: 20%;
+    top: 0;
+    right: 0;
+    font-family: monospace;
+}
+a.previous span, a.next span, a.close span {
     position: absolute;
     top: 50%;
-    left: 50%;
     -ms-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+}
+a.previous span {
+    left: 60%;
+}
+a.next span, a.close span {
+    left: 40%;
 }
 span.chevron::before {
     border-style: solid;
@@ -434,11 +446,26 @@ span.chevron::before {
     transform: rotate(-45deg);
     vertical-align: top;
 }
-a.previous span.chevron::before {
+a.previous span.chevron::before{
     border-width: 0.25em 0 0 0.25em;
-    left: 0.25em;
+    left: 0.15em;
 }
 a.next span.chevron::before {
     border-width: 0 0.25em 0.25em 0;
-    right: 0.25em;
+    right: 0.15em;
 }
+span.x {
+    font-size: 2.2em;
+    margin-top: -0.071em;
+}
+@media only screen and (min-width: 450px) {    
+    a.previous, a.next, a.close {
+        width: 18%;
+    }
+}
+@media only screen and (min-width: 580px) {    
+    a.previous, a.next, a.close {
+        width: 15%;
+    }
+}
+

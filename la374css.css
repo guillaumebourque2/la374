@@ -411,10 +411,10 @@ a.next {
     right: 0;
 }
 a.close {
-    height: 20%;
+    height: 30%;
     top: 0;
     right: 0;
-    font-family: monospace;
+    font-family: Consolas, monospace;
 }
 a.previous span, a.next span, a.close span {
     position: absolute;
@@ -455,7 +455,7 @@ a.next span.chevron::before {
     right: 0.15em;
 }
 span.x {
-    font-size: 2.2em;
+    font-size: 1.77em;
     margin-top: -0.071em;
 }
 @media only screen and (min-width: 450px) {    
@@ -466,6 +466,11 @@ span.x {
 @media only screen and (min-width: 580px) {    
     a.previous, a.next, a.close {
         width: 15%;
+    }
+}
+@media only screen and (min-height: 320px) {    
+    a.close {
+        height: 20%;
     }
 }
 

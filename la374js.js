@@ -53,8 +53,8 @@ if (/[?]img=/.test(wlh) ) {
 	//Link to full resolution images
 	var current = $("img.active");
 	function updateFullResLink() {
-		var currfr = current.attr('src').replace(/^.*?[/]images[/]slideshow_[0-9]*?[/]/,'');
-		$("a.full-res").attr("href", "../../images/full_size/" + currfr);
+		var currentFullRes = current.attr('src').replace(/^.*?[/]images[/]slideshow_[0-9]*?[/]/,'');
+		$("a.full-res").attr("href", "../../images/full_size/" + currentFullRes);
 	}
 	updateFullResLink();
 

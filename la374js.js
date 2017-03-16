@@ -145,58 +145,60 @@ if (/[?]img=/.test(wlh) ) {
 
 
 	//Arrow-keys control of slideshow
-	var _keyCodeOld = {
+	//Based on https://siongui.github.io/2017/02/14/javascript-arrow-key-example-via-event-key/
+	var _keyCodeOld = { //Now being deprecated, kept for compatiblity with old browsers
 		LEFT:   37,
 		UP:     38,
 		RIGHT:  39,
 		DOWN:   40,
 		ESC:    27 
 	};
-	var _keyCodeNew = {
+	var _keyCodeNew = { //New web standard
 		LEFT:  "ArrowLeft",
 		UP:    "ArrowUp",
 		RIGHT: "ArrowRight",
 		DOWN:  "ArrowDown",
 		ESC:   "Escape",
-		ESCIE: "Esc"
+	};
+	var _keyCodeNewIE = { //Compatibility with some IE and Firefox older versions
+		LEFT:  "Left",
+		UP:    "Up",
+		RIGHT: "Right",
+		DOWN:  "Down",
+		ESC:   "Esc"
 	};
 
 	function handleKeyboardEvent(evt) {
-		if (!evt) {evt = window.event;} // For old IE compatibility
-		var _keyPressed = evt.key || evt.keyCode || evt.which; // Cross-browser compatibility
-		console.log(_keyPressed);
-
-		if (evt.defaultPrevented) {
-			return; // Do nothing if the event was already processed
-		}
+		if (!evt) {evt = window.event;} //For old IE compatibility
+		var _keyPressed = evt.key || evt.keyCode || evt.which; //Cross-browser compatibility
 
 		switch (_keyPressed) {
 			case _keyCodeOld.LEFT:
 			case _keyCodeOld.UP:
 			case _keyCodeNew.LEFT:
 			case _keyCodeNew.UP:
-				console.log("Previous was pressed");
-				evt.preventDefault();
+			case _keyCodeNewIE.LEFT:
+			case _keyCodeNewIE.UP:
 				$("a.previous").click();
 				break;
 			case _keyCodeOld.RIGHT:
 			case _keyCodeOld.DOWN:
 			case _keyCodeNew.RIGHT:
 			case _keyCodeNew.DOWN:
-				console.log("Next was pressed");
-				evt.preventDefault();
+			case _keyCodeNewIE.RIGHT:
+			case _keyCodeNewIE.DOWN:
 				$("a.next").click();
 				break;
 			case _keyCodeOld.ESC:
 			case _keyCodeNew.ESC:
-			case _keyCodeNew.ESCIE:
-				console.log("Escape was pressed");
-				evt.preventDefault();
+			case _keyCodeNewIE.ESC:
 				$("a.close").click();
 				break;
 			default:
-				return; // Quit when other keys are pressed.
+				return; //Quit function when other keys are pressed.
 		}
+
+		evt.preventDefault(); //Prevent default action for implemented keys
 	}
 
 	//To attach the above function to keydown events on the whole document

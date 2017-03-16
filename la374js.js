@@ -1,3 +1,6 @@
+'use strict'; //Strict mode, to limit silent errors
+
+
 //Switching between languages
 $("#language").click(function() {
 	//Redirect to the url that matches the current language
@@ -141,15 +144,87 @@ if (/[?]img=/.test(wlh) ) {
 	}
 
 
+	//Arrow-keys control of slideshow
+	var _keyCodeOld = {
+		LEFT:   37,
+		UP:     38,
+		RIGHT:  39,
+		DOWN:   40,
+		ESC:    27 
+	};
+	var _keyCodeNew = {
+		LEFT:  "ArrowLeft",
+		UP:    "ArrowUp",
+		RIGHT: "ArrowRight",
+		DOWN:  "ArrowDown",
+		ESC:   "Escape",
+		ESCIE: "Esc"
+	};
+
+	function handleKeyboardEvent(evt) {
+		if (!evt) {evt = window.event;} // For old IE compatibility
+		var _keyPressed = evt.key || evt.keyCode || evt.which; // Cross-browser compatibility
+		console.log(_keyPressed);
+
+		if (evt.defaultPrevented) {
+			return; // Do nothing if the event was already processed
+		}
+
+		switch (_keyPressed) {
+			case _keyCodeOld.LEFT:
+			case _keyCodeOld.UP:
+			case _keyCodeNew.LEFT:
+			case _keyCodeNew.UP:
+				console.log("Previous was pressed");
+				evt.preventDefault();
+				$("a.previous").click();
+				break;
+			case _keyCodeOld.RIGHT:
+			case _keyCodeOld.DOWN:
+			case _keyCodeNew.RIGHT:
+			case _keyCodeNew.DOWN:
+				console.log("Next was pressed");
+				evt.preventDefault();
+				$("a.next").click();
+				break;
+			case _keyCodeOld.ESC:
+			case _keyCodeNew.ESC:
+			case _keyCodeNew.ESCIE:
+				console.log("Escape was pressed");
+				evt.preventDefault();
+				$("a.close").click();
+				break;
+			default:
+				return; // Quit when other keys are pressed.
+		}
+	}
+
+	//To attach the above function to keydown events on the whole document
+	function _addEventListener(evt, element, fn) {
+		if (window.addEventListener) {
+			element.addEventListener(evt, fn, false); //Firefox, Chrome, or modern browsers
+		}
+		else {
+			element.attachEvent('on'+evt, fn); //Old IE
+		}
+	}
+
+	_addEventListener('keydown', document, handleKeyboardEvent);
+
+
+
 	//To switch between smartphone slideshow pictures and tablet/desktop slideshow pictures
 	function higherRes() {
 		if (window.matchMedia("(min-width: 601px)").matches) {
-			$("div.slideshow img").each(function() {
-				var $this = $(this);       
-				var _src = $this.attr("src");
-				$this.attr("src", _src.replace('slideshow_900/','slideshow_2000/'));
-			});
+			if(/slideshow_900/.test($("div.slideshow img").attr("src"))) {
+				$("div.slideshow img").each(function() {
+					var $this = $(this);       
+					var _src = $this.attr("src");
+					$this.attr("src", _src.replace('slideshow_900/','slideshow_2000/'));
+				});
+			}
 		}
 	}
 	higherRes();
+	_addEventListener('resize', window, higherRes);
 }

@@ -418,17 +418,17 @@ a.close {
 }
 a.previous span, a.next span, a.close span {
     position: absolute;
-    top: 50%;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+    bottom: 50%;
+    -ms-transform: translateX(50%) translateY(50%);
+    -moz-transform: translateX(50%) translateY(50%);
+    -webkit-transform: translateX(50%) translateY(50%);
+    transform: translateX(50%) translateY(50%);
 }
 a.previous span {
-    left: 60%;
+    right: 40%;
 }
 a.next span, a.close span {
-    left: 40%;
+    right: 60%;
 }
 span.chevron::before {
     border-style: solid;

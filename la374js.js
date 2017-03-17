@@ -203,7 +203,7 @@ if (/[?]img=/.test(wlh) ) {
 
 	//To attach the above function to keydown events on the whole document
 	function _addEventListener(evt, element, fn) {
-		if (window.addEventListener) {
+		if (window.addEventListener) { //Check if function exist
 			element.addEventListener(evt, fn, false); //Firefox, Chrome, or modern browsers
 		}
 		else {

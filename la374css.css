@@ -391,7 +391,6 @@ div.slideshow img {
 }
 
 a.previous, a.next, a.close {
-    font-weight: bolder;
     font-size: 500%;
     color: rgba(255,255,255,0.4);
     position: absolute;
@@ -400,6 +399,7 @@ a.previous, a.next, a.close {
     width: 21%;
 }
 a.previous, a.next {
+    font-weight: bolder;
     height: 100%;
     top: 0;
     bottom: 0;
@@ -414,7 +414,8 @@ a.close {
     height: 30%;
     top: 0;
     right: 0;
-    font-family: Consolas, monospace;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 600;
 }
 a.previous span, a.next span, a.close span {
     position: absolute;
@@ -447,15 +448,15 @@ span.chevron::before {
     vertical-align: top;
 }
 a.previous span.chevron::before{
-    border-width: 0.25em 0 0 0.25em;
+    border-width: 0.125em 0 0 0.125em;
     left: 0.15em;
 }
 a.next span.chevron::before {
-    border-width: 0 0.25em 0.25em 0;
+    border-width: 0 0.125em 0.125em 0;
     right: 0.15em;
 }
 span.x {
-    font-size: 1.77em;
+    font-size: 1.7em;
     margin-top: -0.071em;
 }
 @media only screen and (min-width: 450px) {    
